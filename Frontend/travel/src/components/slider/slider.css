@@ -4,7 +4,7 @@
   position: relative;
   overflow: hidden;
   padding-top: 3.5rem;
-  border-radius: 60px;
+  border-radius: 90px 0 40px 0;
   margin-left: 100px;
 }
 
@@ -71,20 +71,20 @@
 }
 
 .arrow {
-  border: 2px solid #aec8a1;
+  border: 1px solid #aec8a1;
   border-radius: 50%;
   background: transparent;
   color: #aec8a1;
-  width: 2rem;
-  height: 2rem;
+  width: 1.8rem;
+  height: 1.8rem;
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 45%;
   z-index: 999;
 }
 
 .arrow:hover {
-  background: #fff;
+  background: #aec8a1;
   color: #777;
 }
 
