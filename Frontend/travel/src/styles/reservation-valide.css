@@ -1,0 +1,13 @@
+.thank-you span i {
+  font-size: 4rem;
+  color: #dc9357;
+}
+
+.thank-you h1 {
+  font-size: 3.6rem;
+  font-family: var(--subtitle-font-name);
+}
+
+.retour {
+  margin-right: 100px;
+}

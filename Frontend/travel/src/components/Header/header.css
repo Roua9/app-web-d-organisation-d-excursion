@@ -9,7 +9,8 @@
 }
 
 .logo img {
-  width: 30%;
+  width: 15%;
+  margin-bottom: 18px;
   border-radius: 20px;
 }
 
@@ -46,4 +47,7 @@
   left: 0;
   box-shadow: 3px 3px 8px -3px #ddd;
   z-index: 999;
+}
+.conn {
+  margin-top: 1px;
 }

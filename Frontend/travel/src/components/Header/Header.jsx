@@ -1,7 +1,7 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import { Container, Row, Button } from "reactstrap"
 import { NavLink, Link } from "react-router-dom"
-import logo from "../../assets/images/logo.jpg"
+import logo from "../../assets/images/logo2.jpg"
 import "./header.css"
 const nav_links = [
   {
@@ -9,7 +9,7 @@ const nav_links = [
     display: "Accueil",
   },
   {
-    path: "/execursion",
+    path: "/excursion",
     display: "Excursion",
   },
   {
@@ -20,15 +20,30 @@ const nav_links = [
     path: "/camping",
     display: "Camping",
   },
-  {
-    path: "/reservation",
-    display: "Réservation",
-  },
 ]
 
 const Header = () => {
+  const headerRef = useRef(null)
+
+  const stickyHeaderFunc = () => {
+    window.addEventListener("scroll", () => {
+      if (
+        document.body.scrollTop > 80 ||
+        document.documentElement.scrollTop > 80
+      ) {
+        headerRef.current.classList.add("sticky__header")
+      } else {
+        headerRef.current.classList.remove("sticky__header")
+      }
+    })
+  }
+  useEffect(() => {
+    stickyHeaderFunc()
+    return window.removeEventListener("scroll", stickyHeaderFunc)
+  })
+
   return (
-    <header className="header">
+    <header className="header" ref={headerRef}>
       <Container>
         <Row>
           <div className="nav_wrapper d-flex align-items-center justify-content-between">
@@ -57,7 +72,7 @@ const Header = () => {
             {/***********menu end **********/}
             <div className="nav__right d-flex align-items-center gap-4">
               <div className="nav__btns d-flex align-items-center gap-4">
-                <Button className="btn secondary__btn ">
+                <Button className="btn secondary__btn  conn">
                   <Link to="/login">Se connecter</Link>
                 </Button>
                 <Button className="btn primary__btn ">

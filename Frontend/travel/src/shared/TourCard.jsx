@@ -32,7 +32,7 @@ const TourCard = ({ tour }) => {
             </span>
           </div>
           <h5 className="tour__title">
-            <Link to={`/execursion/${id}`}>{title}</Link>
+            <Link to={`/excursion/${id}`}>{title}</Link>
           </h5>
 
           <div className="card__bottom d-flex align-items-center justify-content-between mt-3">
@@ -42,7 +42,7 @@ const TourCard = ({ tour }) => {
             </h5>
 
             <button className="btn booking__btn">
-              <Link to={`/execursion/${id}`}> Réserver</Link>
+              <Link to={`/excursion/${id}`}> Réserver</Link>
             </button>
           </div>
         </CardBody>

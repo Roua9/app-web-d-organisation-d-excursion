@@ -17,7 +17,7 @@ const servicesData = [
   },
   {
     imgUrl: customizationImg,
-    title: "Customization",
+    title: "La gestion des voyages",
     desc: "lore mlorem ",
   },
 ]
@@ -26,7 +26,7 @@ const ServiceList = () => {
   return (
     <>
       {servicesData.map((item, index) => (
-        <Col lg="3" key={index}>
+        <Col lg="4" key={index}>
           <ServiceCard item={item} />
         </Col>
       ))}

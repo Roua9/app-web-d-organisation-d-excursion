@@ -7,16 +7,22 @@ import galleryImg06 from "../../assets/images/gallery-09.jpg"
 import galleryImg07 from "../../assets/images/gallery-08.jpg"
 import galleryImg08 from "../../assets/images/gallery-10.jpg"
 import galleryImg09 from "../../assets/images/gallery-11.jpg"
+import galleryImg10 from "../../assets/images/gallery-12.jpg"
+import galleryImg11 from "../../assets/images/gallery-13.jpg"
+
+import galleryImg13 from "../../assets/images/gallery-15.jpg"
 const galleryImages = [
   galleryImg08,
   galleryImg07,
   galleryImg05,
-  galleryImg01,
-  galleryImg06,
-  galleryImg02,
+  galleryImg10,
   galleryImg03,
+  galleryImg06,
+  galleryImg11,
+  galleryImg13,
+  galleryImg01,
+  galleryImg02,
   galleryImg04,
-
   galleryImg09,
 ]
 
