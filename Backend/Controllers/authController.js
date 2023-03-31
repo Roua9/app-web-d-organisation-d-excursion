@@ -1,6 +1,7 @@
 const User = require("../Models/User")
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
+const cookie = require("cookie")
 // user registration
 exports.register = async (req, res) => {
   try {
@@ -24,6 +25,52 @@ exports.register = async (req, res) => {
 
 // user login
 exports.login = async (req, res) => {
+  const email = req.body.email
+
   try {
-  } catch (error) {}
+    const user = await User.findOne({ email })
+
+    if (!user) {
+      return res.status(404).json({ success: false, message: "User not found" })
+    }
+
+    // if user exist then check the password or compare the password
+    const checkCorrectPassword = await bcrypt.compare(
+      req.body.password,
+      user.password
+    )
+
+    // password incorrect
+
+    if (!checkCorrectPassword) {
+      return res
+        .status(401)
+        .json({ success: false, message: "Incorrect email or password" })
+    }
+    const { password, role, ...rest } = user._doc
+
+    // create jwt token
+    let secretKey = "1001gagagag"
+    const token = jwt.sign({ id: user._id, role: user.role }, secretKey, {
+      expiresIn: "15d",
+    })
+
+    // set token in the browser cookies and send the response to the client
+
+    res
+      .cookie("accessToken", token, {
+        httpOnly: true,
+        expires: token.expiresIn,
+      })
+      .status(200)
+      .json({
+        success: true,
+        message: "successfully login",
+        token,
+        data: { ...rest },
+        role,
+      })
+  } catch (error) {
+    res.status(500).json({ success: false, message: "Failed to login" })
+  }
 }
