@@ -1,10 +1,16 @@
 const express = require("express")
 const router = express.Router()
 
-const ExcursionController = require("../Controllers/ExcursionController.js")
+const ExcursionController = require("../Controllers/excursionController.js")
+
+const verifyToken = require("../utils/verifyToken")
 
 //create new excursion
-router.post("/addExcursion", ExcursionController.createExcursion)
+router.post(
+  "/addExcursion",
+
+  ExcursionController.createExcursion
+)
 
 //update excursion
 router.put("/:id/updateExcursion", ExcursionController.updateExcursion)
@@ -19,12 +25,18 @@ router.get("/:id/getSingleExcursion", ExcursionController.getSingleExcursion)
 router.get("/getAllExcursion", ExcursionController.getAllExcursion)
 
 //get excursion by search
-router.get("/search/getExcursionBySearch", ExcursionController.getExcursionBySearch)
+router.get(
+  "/search/getExcursionBySearch",
+  ExcursionController.getExcursionBySearch
+)
 
-//get featured excursion 
-router.get("/search/getFeaturedExcursion", ExcursionController.getFeaturedExcursion)
+//get featured excursion
+router.get(
+  "/search/getFeaturedExcursion",
+  ExcursionController.getFeaturedExcursion
+)
 
-//get count excursion 
+//get count excursion
 router.get("/search/getExcursionCount", ExcursionController.getExcursionCount)
 
 // export default router

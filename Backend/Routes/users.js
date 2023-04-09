@@ -5,10 +5,14 @@ const verifyToken = require("../utils/verifyToken")
 const UserController = require("../Controllers/userController")
 
 //update User
-router.put("/:id/updateUser", UserController.updateUser)
+router.put("/:id/updateUser", verifyToken.verifyUser, UserController.updateUser)
 
 //delete User
-router.delete("/:id/deleteUser", UserController.deleteUser)
+router.delete(
+  "/:id/deleteUser",
+  verifyToken.verifyUser,
+  UserController.deleteUser
+)
 
 //getSingle User
 router.get(
@@ -18,5 +22,5 @@ router.get(
 )
 
 //getAll User
-router.get("/getAllUser", UserController.getAllUser)
+router.get("/getAllUser", verifyToken.verifyAdmin, UserController.getAllUser)
 module.exports = router

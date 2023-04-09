@@ -6,7 +6,7 @@ const verifyToken = (req, res, next) => {
   if (!token) {
     return res
       .status(401)
-      .json({ success: false, message: "you're not authorize" })
+      .json({ success: false, message: "you're not authorize " })
   }
 
   // if token is exist then verify the token

@@ -60,7 +60,7 @@ exports.deleteExcursion = async (req, res) => {
 exports.getSingleExcursion = async (req, res) => {
   const id = req.params.id
   try {
-    const excursion = await Excursion.findById(id)
+    const excursion = await Excursion.findById(id).populate("reviews")
 
     res.status(200).json({
       success: true,
@@ -78,6 +78,7 @@ exports.getAllExcursion = async (req, res) => {
 
   try {
     const excursions = await Excursion.find({})
+      .populate("reviews")
       .skip(page * 8)
       .limit(8)
 
@@ -103,7 +104,7 @@ exports.getExcursionBySearch = async (req, res) => {
       city,
       distance: { $gte: distance },
       maxGroupSize: { $gte: maxGroupSize },
-    })
+    }).populate("reviews")
 
     res.status(200).json({
       success: true,
@@ -118,7 +119,9 @@ exports.getExcursionBySearch = async (req, res) => {
 //get featured excursion
 exports.getFeaturedExcursion = async (req, res) => {
   try {
-    const excursions = await Excursion.find({ featured: true }).limit(8)
+    const excursions = await Excursion.find({ featured: true })
+      .populate("reviews")
+      .limit(8)
 
     res.status(200).json({
       success: true,

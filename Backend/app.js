@@ -3,8 +3,13 @@ const mongoose = require("mongoose")
 const cors = require("cors") // juste pour la sécurité
 const cookieParser = require("cookie-parser")
 
+const corsOptions = {
+  origin: true,
+  credentials: true,
+}
+
 const app = express()
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use(cookieParser())
 
@@ -23,6 +28,12 @@ app.use("/users", userRoute)
 
 const authRoute = require("./Routes/auth.js")
 app.use("/auth", authRoute)
+
+const reviewRoute = require("./Routes/reviews.js")
+app.use("/review", reviewRoute)
+
+const bookingRoute = require("./Routes/bookings.js")
+app.use("/booking", bookingRoute)
 
 // cnx DB
 mongoose.connect("mongodb://localhost:27017/pfadb", {
