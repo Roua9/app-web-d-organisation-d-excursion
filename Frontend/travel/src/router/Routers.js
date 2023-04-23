@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom"
 import Camping from "../pages/Camping"
 import Excursion from "../pages/Excursion"
 import ExcursionDetails from "../pages/ExcursionDetails"
+import CampDetails from "../pages/CampDetails"
 import Home from "../pages/Home"
 import Hotel from "../pages/Hotel"
 import HotelDetails from "../pages/HotelDetails"
@@ -18,7 +19,8 @@ const Routers = () => {
       <Route path="/hotel" element={<Hotel />} />
       <Route path="/excursion" element={<Excursion />} />
       <Route path="/camping" element={<Camping />} />
-      <Route path="/hotels/:id" element={<HotelDetails />} />
+      <Route path="/camping/:id" element={<CampDetails />} />
+      <Route path="/hotel/:id" element={<HotelDetails />} />
       <Route path="/excursion/:id" element={<ExcursionDetails />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />

@@ -1,32 +1,60 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import "./booking.css"
 import { Form, FormGroup, ListGroup, ListGroupItem, Button } from "reactstrap"
 import { useNavigate } from "react-router-dom"
+import { AuthContext } from "../../context/AuthContext"
+import { BASE_URL } from "../../utils/config"
+
 const Booking = ({ tour, avgRating }) => {
-  const { price, reviews } = tour
-  const [credentials, setCredentials] = useState({
-    userId: "01",
-    email: "roua@gmail.com",
-    fullname: "",
+  const { price, reviews, title } = tour
+
+  const navigate = useNavigate()
+
+  const { user } = useContext(AuthContext)
+  const [booking, setBooking] = useState({
+    userId: user && user._id,
+    userEmail: user && user.email,
+    tourName: title,
+    fullName: "",
     phone: "",
     guestSize: "",
     bookAt: "",
   })
   const handleChange = (e) => {
-    setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }))
+    setBooking((prev) => ({ ...prev, [e.target.id]: e.target.value }))
   }
 
   const serviceFee = 10
   const totalAmount =
-    Number(price) * Number(credentials.guestSize) + Number(serviceFee)
+    Number(price) * Number(booking.guestSize) + Number(serviceFee)
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault()
-    // console.log(credentials)
-    navigate("/reservationValide")
-  }
 
-  const navigate = useNavigate()
+    console.log(booking)
+
+    try {
+      if (!user || user === "undefined" || user === null) {
+        return alert("Please Sign In")
+      }
+      const res = await fetch(`${BASE_URL}/booking`, {
+        method: "post",
+        headers: {
+          "content-type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify(booking),
+      })
+      const result = await res.json()
+
+      if (!res.ok) {
+        return alert(result.message)
+      }
+      navigate("/reservationValide")
+    } catch (error) {
+      alert(error.message)
+    }
+  }
 
   return (
     <div className="booking">
@@ -51,7 +79,7 @@ const Booking = ({ tour, avgRating }) => {
             <input
               type="text"
               placeholder="Nom Complet"
-              id="fullname"
+              id="fullName"
               required
               onChange={handleChange}
             />
@@ -76,7 +104,7 @@ const Booking = ({ tour, avgRating }) => {
             />
             <input
               type="number"
-              placeholder="invités"
+              placeholder="Nbre de personne"
               id="guestSize"
               required
               onChange={handleChange}

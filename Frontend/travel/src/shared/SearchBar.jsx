@@ -7,27 +7,26 @@ import { useNavigate } from "react-router-dom"
 const SearchBar = () => {
   const locationRef = useRef("")
   const distanceRef = useRef(0)
-  const maxGroupSizeRef = useRef(0)
+  const priceRef = useRef(0)
   const navigate = useNavigate()
 
   const searchHandler = async () => {
     const location = locationRef.current.value
     const distance = distanceRef.current.value
-    const maxGroupSize = maxGroupSizeRef.current.value
+    const price = priceRef.current.value
 
-    if (location === "" || distance === "" || maxGroupSize === "") {
+    if (location === "" || distance === "" || price === "") {
       return alert("All field are required")
     }
     const res = await fetch(
-      `${BASE_URL}/excursions/search/getExcursionBySearch?city=${location}&distance=${distance}&maxGroupSize=${maxGroupSize}`
+      `${BASE_URL}/excursions/search/getExcursionBySearch?city=${location}&distance=${distance}&price=${price}`
     )
 
     if (!res.ok) alert("something went wrong")
     const result = await res.json()
-    navigate(
-      `/search?city=${location}&distance=${distance}&maxGroupSize=${maxGroupSize}`,
-      { state: result.data }
-    )
+    navigate(`/search?city=${location}&distance=${distance}&price=${price}`, {
+      state: result.data,
+    })
   }
 
   return (
@@ -68,8 +67,8 @@ const SearchBar = () => {
               <i class="ri-group-fill"></i>{" "}
             </span>
             <div>
-              <h6> Max people</h6>
-              <input type="number" placeholder="0" ref={maxGroupSizeRef} />
+              <h6> Prix</h6>
+              <input type="number" placeholder="0" ref={priceRef} />
             </div>
           </FormGroup>
           <span className="search__icon" type="submit" onClick={searchHandler}>

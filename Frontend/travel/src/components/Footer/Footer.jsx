@@ -18,22 +18,22 @@ const Footer = () => {
               <div className="social__links d-flex align-items-center gap-4">
                 <span>
                   <Link to="#">
-                    <i class="ri-youtube-fill"></i>
+                    <i className="ri-youtube-fill"></i>
                   </Link>
                 </span>
                 <span>
                   <Link to="#">
-                    <i class="ri-facebook-circle-fill"></i>
+                    <i className="ri-facebook-circle-fill"></i>
                   </Link>
                 </span>
                 <span>
                   <Link to="#">
-                    <i class="ri-instagram-fill"></i>
+                    <i className="ri-instagram-fill"></i>
                   </Link>
                 </span>
                 <span>
                   <Link to="#">
-                    <i class="ri-twitter-fill"></i>
+                    <i className="ri-twitter-fill"></i>
                   </Link>
                 </span>
               </div>
@@ -55,7 +55,7 @@ const Footer = () => {
               >
                 <h6 className="mb-0 d-flex align-items-center gap-2">
                   <span>
-                    <i class="ri-map-pin-range-line"></i>
+                    <i className="ri-map-pin-range-line"></i>
                   </span>
                   Adresse :
                 </h6>
@@ -68,7 +68,7 @@ const Footer = () => {
               >
                 <h6 className="mb-0 d-flex align-items-center gap-2">
                   <span>
-                    <i class="ri-mail-line"></i>
+                    <i className="ri-mail-line"></i>
                   </span>
                   Email :
                 </h6>
@@ -80,7 +80,7 @@ const Footer = () => {
               >
                 <h6 className="mb-0 d-flex align-items-center gap-2">
                   <span>
-                    <i class="ri-phone-line"></i>
+                    <i className="ri-phone-line"></i>
                   </span>
                   Téléphone :
                 </h6>
@@ -92,16 +92,16 @@ const Footer = () => {
             <h5 className="footer__link-paiement">Paiement sécurisé</h5>
             <div className="pay">
               <span>
-                <i class="ri-visa-line"></i>
+                <i className="ri-visa-line"></i>
               </span>
               <span>
-                <i class="ri-secure-payment-line"></i>
+                <i className="ri-secure-payment-line"></i>
               </span>
               <span>
-                <i class="ri-bank-card-fill"></i>
+                <i className="ri-bank-card-fill"></i>
               </span>
               <span>
-                <i class="ri-mastercard-fill"></i>
+                <i className="ri-mastercard-fill"></i>
               </span>
             </div>
 

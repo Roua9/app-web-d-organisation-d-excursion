@@ -10,7 +10,7 @@ const ReservationValide = () => {
           <Col lg="12" className="pt-5 text-center">
             <div className="thank-you">
               <span>
-                <i class="ri-check-double-line"></i>
+                <i className="ri-check-double-line"></i>
               </span>
               <h1 className="mb-4 fw-semibold">
                 {" "}

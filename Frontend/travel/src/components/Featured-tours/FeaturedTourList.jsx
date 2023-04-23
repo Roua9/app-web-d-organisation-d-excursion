@@ -13,7 +13,7 @@ const FeaturedTourList = () => {
     loading,
     error,
   } = useFetch(`${BASE_URL}/excursions/search/getFeaturedExcursion`)
-  console.log(featuredTours)
+  //console.log(featuredTours)
 
   return (
     <>

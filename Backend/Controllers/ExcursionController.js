@@ -97,13 +97,13 @@ exports.getAllExcursion = async (req, res) => {
 exports.getExcursionBySearch = async (req, res) => {
   const city = new RegExp(req.query.city, "i")
   const distance = parseInt(req.query.distance)
-  const maxGroupSize = parseInt(req.query.maxGroupSize)
+  const price = parseInt(req.query.price)
   try {
     //$gte : matcher than equal
     const excursions = await Excursion.find({
       city,
       distance: { $gte: distance },
-      maxGroupSize: { $gte: maxGroupSize },
+      price: { $gte: price },
     }).populate("reviews")
 
     res.status(200).json({
