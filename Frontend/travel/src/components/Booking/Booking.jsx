@@ -24,9 +24,9 @@ const Booking = ({ tour, avgRating }) => {
     setBooking((prev) => ({ ...prev, [e.target.id]: e.target.value }))
   }
 
-  const serviceFee = 10
-  const totalAmount =
-    Number(price) * Number(booking.guestSize) + Number(serviceFee)
+  //const serviceFee = 10
+  const totalAmount = Number(price) * Number(booking.guestSize)
+  //+ Number(serviceFee)
 
   const handleClick = async (e) => {
     e.preventDefault()
@@ -122,12 +122,10 @@ const Booking = ({ tour, avgRating }) => {
             </h5>
             <span> {price} DTN</span>
           </ListGroupItem>
-
-          <ListGroupItem className="border-0 px-0">
+          {/* <ListGroupItem className="border-0 px-0">
             <h5>Service charge</h5>
-            <span> {serviceFee} DTN</span>
-          </ListGroupItem>
-
+            {/* <span> {serviceFee} DTN</span> */}
+          {/* </ListGroupItem> */}
           <ListGroupItem className="border-0 px-0 total">
             <h5>Total</h5>
             <span>{totalAmount} DTN</span>

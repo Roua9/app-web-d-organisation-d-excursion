@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+.materiel__img img {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  border-radius: 5px 5px 0 0;
+}
+.card {
+  border: none !important;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+}
+
+.materiel__img {
+  position: relative;
+}
+
+.materiel__title {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.materiel__title a {
+  text-decoration: none;
+  color: #060606;
+  transition: 0.3s;
+}
+
+.materiel__title a:hover {
+  color: #f3bb00;
+}
+
+.card__bottom-desc h5 {
+  color: #5f5a5a;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.card__bottom h5 {
+  color: #a1c33e;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  margin: auto;
+  display: flex;
+}
+
+section .pub {
+  margin-left: 8%;
+  background: #679436 !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 0.4rem 1.5rem !important;
+}
+
+.card__bottom-desc h6 {
+  font-family: "Dancing Script", cursive;
+  font-weight: bold;
+}
+
+.card__bottom-desc h5 {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.1rem;
+}

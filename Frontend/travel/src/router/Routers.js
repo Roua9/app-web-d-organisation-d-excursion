@@ -11,6 +11,8 @@ import Login from "../pages/Login"
 import Register from "../pages/Register"
 import ReservationValide from "../pages/ReservationValide"
 import SearchResultList from "../pages/SearchResultList"
+import MaterielCamp from "../pages/MaterielCamp"
+import FormAjoutMateriel from "../pages/FormAjoutMateriel"
 const Routers = () => {
   return (
     <Routes>
@@ -20,6 +22,10 @@ const Routers = () => {
       <Route path="/excursion" element={<Excursion />} />
       <Route path="/camping" element={<Camping />} />
       <Route path="/camping/:id" element={<CampDetails />} />
+      <Route path="/materiel" element={<MaterielCamp />} />
+
+      <Route path="/ajoutMateriel" element={<FormAjoutMateriel />} />
+
       <Route path="/hotel/:id" element={<HotelDetails />} />
       <Route path="/excursion/:id" element={<ExcursionDetails />} />
       <Route path="/login" element={<Login />} />

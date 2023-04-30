@@ -56,7 +56,7 @@
 }
 
 .tour__title a:hover {
-  color: var(--third-color);
+  color: #f3bb00;
 }
 
 .card__bottom h5 {

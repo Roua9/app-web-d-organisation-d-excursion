@@ -9,7 +9,6 @@ const ServiceCard = ({ item }) => {
         <img src={imgUrl} alt="" />
       </div>
       <h5>{title}</h5>
-      <p>{desc}</p>
     </div>
   )
 }

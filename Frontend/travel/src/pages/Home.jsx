@@ -23,14 +23,14 @@ const Home = () => {
                   {/* <img src={world} alt="" /> */}
                 </div>
                 <h1>
-                  Traveling opens the door to creating{" "}
-                  <span className="highlight"> memories</span>
+                  La vie est une aventure audacieuse ou
+                  <span className="highlight"> rien</span>
                 </h1>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
-                  molestiae illo. Exercitationem commodi totam magnam illo earum
-                  nisi officia, ex modi dolore aliquid ad similique aut possimus
-                  pariatur culpa. Voluptates!
+                  Remplissez vos yeux d'émerveillement, vivez comme si vous
+                  tombiez mort en dix secondes. Voir le monde. C'est plus
+                  fantastique que n'importe quel rêve fait ou payé dans les
+                  usines.
                 </p>
               </div>
             </Col>
@@ -43,17 +43,6 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-      <Container>
-        <Row>
-          <Col lg="3" className="service">
-            <Subtitle subtitle={"Nos services"} />
-
-            {/* <h2 className="services__title"> We offer our best services </h2> */}
-          </Col>
-
-          <ServiceList />
-        </Row>
-      </Container>
       {/***********featured tour section start****/}
       <Container>
         <Row>
@@ -62,6 +51,20 @@ const Home = () => {
             <h2 className="featured__tour-title"> Our featured tours </h2>
           </Col>
           <FeaturedTourList />
+        </Row>
+      </Container>
+
+      <Container>
+        <Row>
+          <Col lg="3" className="service">
+            <div className="subService">
+              <Subtitle subtitle={"Our services"} />
+            </div>
+
+            {/* <h2 className="services__title"> We offer our best services </h2> */}
+          </Col>
+
+          <ServiceList />
         </Row>
       </Container>
 

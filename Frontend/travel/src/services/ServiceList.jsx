@@ -8,17 +8,14 @@ const servicesData = [
   {
     imgUrl: WeatherImg,
     title: "Calculate Weather",
-    desc: "lore mlorem ",
   },
   {
     imgUrl: guideImg,
     title: "Best Tour Guide",
-    desc: "lore mlorem ",
   },
   {
     imgUrl: customizationImg,
-    title: "La gestion des voyages",
-    desc: "lore mlorem ",
+    title: "Transport",
   },
 ]
 

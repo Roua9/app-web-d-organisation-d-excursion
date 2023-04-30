@@ -96,7 +96,7 @@ const Header = () => {
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#scrollspyHeading4">
+                      <a class="dropdown-item" href="/materiel">
                         Matériel
                       </a>
                     </li>

@@ -21,7 +21,7 @@ const Newsletter = () => {
                 <button className="btn newsletter__btn">S'inscrire</button>
               </div>
               <p>
-                TravelTime, votre Agence de Voyage en Tunisie en Ligne vous
+                VacationTime, votre Agence de Voyage en Tunisie en Ligne vous
                 propose des Promotions sur vos Voyages et Séjours en Tunisie
                 avec les Meilleurs Prix et Services
               </p>

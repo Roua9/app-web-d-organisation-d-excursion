@@ -86,8 +86,8 @@ const Testimonials = () => {
 
       <div className="testimonial py-4 px-3">
         <p>
-          Première expérience avec Travel time : conseil et accompagnement, lors
-          de la préparation du voyage en Tabarka, sur place de très bonne
+          Première expérience avec Vacation time : conseil et accompagnement,
+          lors de la préparation du voyage en Tabarka, sur place de très bonne
           qualité. Nous avons également apprécié l’échange au retour de notre
           voyage.
         </p>
